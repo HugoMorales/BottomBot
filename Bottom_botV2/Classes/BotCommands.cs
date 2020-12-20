@@ -10,25 +10,24 @@ namespace Bottom_botV2.Classes
 {
     class BotCommands
     {
-
         private static RandomMessages randomMessages = new RandomMessages();
         private static string[] listCharacters = Constants.kListSmashCharacters;
 
         [Command("boneco"),
         Description("Seleciona um boneco de Smash randomicamente")]
-        public async Task boneco(CommandContext ctx)
+        public async Task Boneco(CommandContext ctx)
         {
             Random randomizer = new Random();
             int indexChar = randomizer.Next(0, listCharacters.Length);
             string selectedChar = listCharacters[indexChar];
 
-            await ctx.Message.RespondAsync(selectedChar);
+            await ctx.Message.RespondAsync($":game_die: {selectedChar} :game_die:");
         }
 
         [Command("bottom"),
         Aliases("noel"),
         Description("Gera uma bottomzisse no chat")]
-        public async Task bottom(CommandContext ctx)
+        public async Task Bottom(CommandContext ctx)
         {
             string newMessage = randomMessages.GetNewMessage(ctx.User.Username);
             await ctx.Message.RespondAsync(newMessage);
@@ -37,7 +36,7 @@ namespace Bottom_botV2.Classes
         [Command("setGame"),                    //Sets the game in the bot's status
         Description("Muda o jogo que o bot está jogando"),
         Cooldown(max_uses: 3, reset: 600, bucket_type: CooldownBucketType.Guild)]                                                 
-        public async Task setGame(CommandContext ctx, [RemainingText] string gameName)
+        public async Task SetGame(CommandContext ctx, [RemainingText] string gameName)
         {
             DiscordGame botGame = new DiscordGame();
             botGame.Name = gameName;
@@ -48,14 +47,14 @@ namespace Bottom_botV2.Classes
         [Command("github"),
         Aliases("source"),
         Description("Link para o código fonte do bot")]
-        public async Task github(CommandContext ctx)
+        public async Task Github(CommandContext ctx)
         {
             await ctx.Message.RespondAsync("https://github.com/HugoMorales/BottomBot");
         }
 
         [Command("invite"),                                         //creates and post a invite link to the server
         Description("Cria um invite temporário para o server")]
-        public async Task invite(CommandContext ctx)
+        public async Task Invite(CommandContext ctx)
         {
             var invChannel = ctx.Guild.Channels.FirstOrDefault(channel => channel.Name == "geral");
             DiscordInvite invite;
@@ -66,7 +65,7 @@ namespace Bottom_botV2.Classes
         [Command("roll"),     //returns a random number
         Description("Gera um número randômico de 1 até o valor máximo informado"),
         Aliases("dice", "random")]
-        public async Task random(CommandContext ctx, int max)
+        public async Task Random(CommandContext ctx, int max)
         {
             int number;
             max--;

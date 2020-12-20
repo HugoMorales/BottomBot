@@ -12,6 +12,7 @@ namespace Bottom_botV2
             Console.WriteLine("Insert the Bot Client ID: ");
             clientId = Console.ReadLine();
             DiscordBot bottomBot = new DiscordBot(clientId);
+            Console.Clear();
 
             bottomBot.ConnectToDiscod();
         }

@@ -1,8 +1,10 @@
-﻿namespace Bottom_botV2.Utils
+﻿using Bottom_botV2.Classes;
+
+namespace Bottom_botV2.Utils
 {
     class Constants
     {
-        public static int kMessagesToTrigger = 50;
+        public static int kMessagesToTrigger = 100;
         public static string kBotPrefix = "!";
         public static string[] kListSmashCharacters = {
             "Bayonetta",
@@ -88,25 +90,55 @@
             "Zelda",
             "Zero Suit Samus",
         };
-        public static string[] kListResponseMessages = {
-            "RNG RNG RNG",
-            "He he balanceado",
-            "Por que *CHAR* é tão divertido(a)?!?",
-            "Por que *CHAR* é tão roubado(a)?!?",
-            "\"ACTUALLY\"",
-            "Not gonna lie, meu/minha *CHAR* ta kinda schnasty",
-            "Aff, fui pro meme",
-            "Cala a boca *USER*, seu/sua *CHAR* ta cansado(a)",
-            "Mano, Min Min não deveria ter entrado no jogo, olha esse boneco",
-            "OLHA ESSA RANGE",
-            "*CHAR* tem umas microfalhas",
-            "DEIXA EU FALAR DEIXA EU FALAR",
-            "Bora Smash *USER*?",
-            "Meu PT é ruim :(",
-            "Eu não sou horny :(",
-            "Esse golpe do(a) *CHAR* é quebrado",
-            "Esse golpe do(a) *CHAR* não funciona",
-            "Cansei do PT, agora to de *CHAR*"
+        public static string[] kListSmashAttacks =
+        {
+            "Down Smash",
+            "FSmash",
+            "Up Smash",
+            "Down B",
+            "Neutral B",
+            "Side B",
+            "Up B",
+            "Down Tilt",
+            "FTilt",
+            "Up Tilt",
+            "Jab",
+            "Recovery"
+        };
+        public static string[] kListEngrish = { 
+        "Actually",
+        "Not gonna lie"
+        };
+        public static Noelzisses[] kListResponseMessages = {
+            new Noelzisses("RNG RNG RNG", canRdmEngrish: false),
+            new Noelzisses("He he balanceado", canRdmEngrish: false),
+            new Noelzisses("Por que *CHAR* é tão divertido(a)?!?", canRdmEngrish: true),
+            new Noelzisses("Por que *CHAR* é tão roubado(a)?!?", canRdmEngrish: true),
+            new Noelzisses("Meu/minha *CHAR* ta kinda schnasty", canRdmEngrish: true),
+            new Noelzisses("Aff, fui pro meme", canRdmEngrish: false),
+            new Noelzisses("Cala a boca *USER*, seu/sua *CHAR* ta cansado(a)", canRdmEngrish: false),
+            new Noelzisses("*CHAR* não deveria ter entrado no jogo, olha esse boneco", canRdmEngrish: false),
+            new Noelzisses("OLHA ESSA RANGE", canRdmEngrish: false),
+            new Noelzisses("*CHAR* tem umas microfalhas", canRdmEngrish: true),
+            new Noelzisses("DEIXA EU FALAR DEIXA EU FALAR", canRdmEngrish: false),
+            new Noelzisses("Bora Smash *USER*?", canRdmEngrish: false),
+            new Noelzisses("Meu PT é ruim :(", canRdmEngrish: true),
+            new Noelzisses("Eu não sou horny :(", canRdmEngrish: false),
+            new Noelzisses("O *ATK* do(a) *CHAR* é quebrado", canRdmEngrish: true),
+            new Noelzisses("O *ATK* do(a) *CHAR* não funciona", canRdmEngrish: true),
+            new Noelzisses("O *ATK* do(a) *CHAR* é muito estúpido", canRdmEngrish: true),
+            new Noelzisses("Cansei do PT, agora to de *CHAR*", canRdmEngrish: true),
+            new Noelzisses("O bot nunca vai me substituir, só eu consigo ser tão burro", canRdmEngrish: true),
+            new Noelzisses("Bora jogar o joguinho de furry", canRdmEngrish: false),
+            new Noelzisses("Eu ia ganhar, dai o *USER* pegou o Arsene", canRdmEngrish: true),
+            new Noelzisses("Como que *CHAR* entrou no jogo? Olha esse *ATK*", canRdmEngrish: true),
+            new Noelzisses("Mamei", canRdmEngrish: true),
+            new Noelzisses("O *ATK* do(a) *CHAR* é o melhor botão do boneco", canRdmEngrish: true),
+            new Noelzisses("O *ATK* do(a) *CHAR* é o pior botão do boneco", canRdmEngrish: true),
+            new Noelzisses("Aff, é main *CHAR*", canRdmEngrish: false),
+            new Noelzisses("Eu batia nele fácil, mas eu queria jogar de *CHAR* :)", canRdmEngrish: true),
+            new Noelzisses("A hitbox do *ATK* do(a) *CHAR* é quebrada", canRdmEngrish: true),
+            new Noelzisses("A hitbox do *ATK* do(a) *CHAR* não funciona", canRdmEngrish: true)
         };
     }
 }

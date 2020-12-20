@@ -25,7 +25,7 @@ namespace Bottom_botV2.Classes
             bool isBot = botEvent.Author.IsBot;
             bool isCommand = botEvent.Message.Content.StartsWith(Constants.kBotPrefix);
 
-            if(!isBot & !isCommand) //Only continue if the new message is not a command and either created by a bot
+            if(!isBot && !isCommand) //Only continue if the new message is not a command and either created by a bot
             {
                 if(contChannels.ContainsKey(channelId))
                 {
